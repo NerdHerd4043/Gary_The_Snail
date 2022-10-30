@@ -8,14 +8,15 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
  * This is a demo program showing the use of the DifferentialDrive class. Runs the motors with split
  * arcade steering and an Xbox controller.
  */
 public class Robot extends TimedRobot {
-  private final PWMTalonSRX m_leftMotor = new PWMTalonSRX(0);
-  private final PWMTalonSRX m_rightMotor = new PWMTalonSRX(1);
+  private final WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(0);
+  private final WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(1);
   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
   private final XboxController m_driverController = new XboxController(0);
 
