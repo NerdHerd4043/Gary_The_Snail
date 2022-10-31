@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive; 
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX;
+
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 /**
@@ -26,6 +28,8 @@ public class Robot extends TimedRobot {
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
     m_rightMotor.setInverted(true);
+    m_rightMotor.setNeutralMode(NeutralMode.Brake);
+    m_leftMotor.setNeutralMode(NeutralMode.Brake);
   }
 
   @Override
