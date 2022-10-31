@@ -15,8 +15,8 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
  * arcade steering and an Xbox controller.
  */
 public class Robot extends TimedRobot {
-  private final WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(0);
-  private final WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(1);
+  private final WPI_TalonSRX m_leftMotor = new WPI_TalonSRX(5);
+  private final WPI_TalonSRX m_rightMotor = new WPI_TalonSRX(4);
   private final DifferentialDrive m_robotDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
   private final XboxController m_driverController = new XboxController(0);
 
@@ -33,6 +33,6 @@ public class Robot extends TimedRobot {
     // Drive with split arcade drive.
     // That means that the Y axis of the left stick moves forward
     // and backward, and the X of the right stick turns left and right.
-    m_robotDrive.arcadeDrive(-m_driverController.getLeftY(), m_driverController.getRightX());
+    m_robotDrive.arcadeDrive(-0.5*m_driverController.getLeftY(), 0.5*m_driverController.getRightX());
   }
 }
